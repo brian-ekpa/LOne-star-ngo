@@ -1,0 +1,1817 @@
+/*
+ * ============================================================
+ * LSHI WEBSITE — MAIN STYLESHEET
+ * Lone Star Hope Initiative
+ * Theme: Midnight & Gold
+ * ============================================================
+ *
+ * HOW TO CUSTOMIZE THIS FILE:
+ * ----------------------------
+ * All colors are defined as CSS Variables in the :root block below.
+ * To change the entire color scheme, just edit the values in that block.
+ * For example, to change the gold accent, update --color-gold.
+ *
+ * SECTIONS IN THIS FILE:
+ * 1. CSS Variables (Brand Colors & Typography)
+ * 2. Reset & Base Styles
+ * 3. Navigation / Header
+ * 4. Hero Section
+ * 5. Stats Bar
+ * 6. About / Mission Section
+ * 7. Objectives Section (Cards Grid)
+ * 8. Trust & Transparency Section
+ * 9. Team / Leadership Section
+ * 10. Donation Section
+ * 11. Contact & Form Section
+ * 12. Footer
+ * 13. Animations & Utilities
+ * 14. Mobile Responsiveness (Media Queries)
+ * ============================================================
+ */
+
+/* ============================================================
+   GOOGLE FONTS — Must be the first @import in the file
+   To change fonts, update the URL below and
+   the --font-heading / --font-body variables in :root
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ============================================================
+   1. CSS VARIABLES — BRAND COLORS & TYPOGRAPHY
+   Change these to update the entire site's color scheme.
+   ============================================================ */
+:root {
+  /* --- Primary Brand Colors --- */
+  --color-midnight: #0d0d1a;        /* Deep navy-black background */
+  --color-midnight-soft: #13132a;   /* Slightly lighter midnight for cards */
+  --color-midnight-mid: #1a1a35;    /* Mid-tone for section backgrounds */
+  --color-midnight-light: #22224a;  /* Hover states and subtle borders */
+
+  /* --- Accent Gold Colors --- */
+  --color-gold: #c9a84c;            /* Primary gold accent */
+  --color-gold-bright: #f0c040;     /* Brighter gold for highlights */
+  --color-gold-muted: #9a7a30;      /* Muted gold for secondary uses */
+  --color-gold-pale: rgba(201, 168, 76, 0.12); /* Very subtle gold background tint */
+
+  /* --- Text Colors --- */
+  --color-text-primary: #f0ede8;    /* Main body text — warm off-white */
+  --color-text-secondary: #b0a898;  /* Secondary / muted text */
+  --color-text-muted: #6e6a62;      /* Placeholder and caption text */
+  --color-text-on-gold: #0d0d1a;    /* Dark text used ON gold backgrounds */
+
+  /* --- Utility Colors --- */
+  --color-white: #ffffff;
+  --color-border: rgba(201, 168, 76, 0.2); /* Subtle gold border */
+  --color-border-soft: rgba(240, 237, 232, 0.08); /* Subtle white border */
+
+  /* --- Typography --- */
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-accent: 'Cinzel', 'Times New Roman', serif; /* For logo & special headings */
+
+  /* --- Spacing & Layout --- */
+  --section-padding: 100px 0;
+  --container-width: 1200px;
+  --container-padding: 0 24px;
+  --border-radius: 8px;
+  --border-radius-lg: 16px;
+
+  /* --- Transitions --- */
+  --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.18s ease;
+
+  /* --- Shadows --- */
+  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 0 24px rgba(201, 168, 76, 0.2);
+  --shadow-nav: 0 2px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ============================================================
+   2. RESET & BASE STYLES
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Smooth scrolling when nav links are clicked */
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-midnight);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ----------------------------------------
+   Reusable Section Container
+   Keeps content centered and padded
+   ---------------------------------------- */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* ----------------------------------------
+   Reusable Section Heading Block
+   ---------------------------------------- */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+/* Gold underline accent for headings */
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright));
+  margin-bottom: 32px;
+  border-radius: 2px;
+}
+
+/* Centered version */
+.gold-line.centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* ============================================================
+   3. NAVIGATION / HEADER
+   The nav is sticky — it stays at the top as you scroll.
+   To change the nav height, update the padding values below.
+   ============================================================ */
+#navbar {
+  position: fixed;           /* Sticks to top of screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;             /* Stays above all other content */
+  padding: 20px 0;
+  transition: var(--transition-smooth);
+
+  /* Starts transparent, becomes opaque on scroll (handled in JS) */
+  background: transparent;
+}
+
+/* When the user scrolls down, JS adds .scrolled class */
+#navbar.scrolled {
+  background: rgba(13, 13, 26, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-nav);
+  padding: 14px 0;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ----------------------------------------
+   Logo Area
+   To change the logo text or tagline, update
+   the HTML in the <nav> section of index.html
+   ---------------------------------------- */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image — sized to fit neatly in the nav bar */
+.nav-logo-img {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  /* Drop-shadow so logo pops on both transparent and dark nav backgrounds */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: var(--transition-smooth);
+}
+
+.nav-logo:hover .nav-logo-img {
+  filter: drop-shadow(0 4px 16px rgba(201, 168, 76, 0.5));
+  transform: scale(1.03);
+}
+
+/* ----------------------------------------
+   Navigation Links
+   ---------------------------------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* Animated underline on hover */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-gold);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ----------------------------------------
+   Donate Button in Nav
+   To change the button text, update it in HTML
+   To change the Paystack link, update data.json
+   ---------------------------------------- */
+.btn-donate-nav {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright));
+  color: var(--color-text-on-gold);
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+}
+
+.btn-donate-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.5);
+}
+
+/* ----------------------------------------
+   Mobile Menu Toggle Button
+   Visible only on small screens
+   ---------------------------------------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+/* When mobile menu is open, JS adds .active class to toggle */
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* ============================================================
+   4. HERO SECTION
+   The large full-screen banner at the top.
+   To change the background image, update the background-image URL.
+   ============================================================ */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+/* Dark gradient overlay over the background */
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 13, 26, 0.92) 0%,
+    rgba(13, 13, 35, 0.75) 50%,
+    rgba(13, 13, 26, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+/* Decorative geometric pattern */
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201, 168, 76, 0.04) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=80') center/cover no-repeat;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+/* "Est. 2020 • Abuja, Nigeria" label */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+/* Main Hero Heading */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 28px;
+  color: var(--color-white);
+}
+
+/* Gold highlighted word in title */
+.hero-title .highlight {
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-bottom: 44px;
+}
+
+/* Hero CTA Buttons */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary Gold Button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright));
+  color: var(--color-text-on-gold);
+  padding: 16px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-block;
+  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(201, 168, 76, 0.55);
+}
+
+/* Outlined / Ghost Button */
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  padding: 14px 34px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(240, 237, 232, 0.3);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* ----------------------------------------
+   Scroll indicator at bottom of hero
+   ---------------------------------------- */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.hero-scroll-indicator::after {
+  content: '';
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+
+/* ============================================================
+   5. STATS BAR
+   Four key impact numbers displayed horizontally.
+   To update numbers, edit the "stats" array in data.json.
+   ============================================================ */
+#stats {
+  background: linear-gradient(135deg, var(--color-gold-muted), var(--color-gold));
+  padding: 48px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Vertical divider between stat items */
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(13, 13, 26, 0.2);
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text-on-gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 26, 0.7);
+}
+
+
+/* ============================================================
+   6. ABOUT / MISSION SECTION
+   ============================================================ */
+#about {
+  padding: var(--section-padding);
+  background: var(--color-midnight);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+/* Gold corner accent */
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 80px;
+  height: 80px;
+  border-top: 3px solid var(--color-gold);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 4px 0 0 0;
+  z-index: 2;
+}
+
+/* Gold corner accent (bottom right) */
+.about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 80px;
+  height: 80px;
+  border-bottom: 3px solid var(--color-gold);
+  border-right: 3px solid var(--color-gold);
+  border-radius: 0 0 4px 0;
+  z-index: 2;
+}
+
+.about-text .section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.about-text p {
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.85;
+}
+
+/* Value pills */
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.value-tag {
+  background: var(--color-gold-pale);
+  border: 1px solid var(--color-border);
+  color: var(--color-gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+
+/* ============================================================
+   7. OBJECTIVES SECTION — DYNAMIC CARDS GRID
+   Cards are populated dynamically from data.json via JavaScript.
+   To add or remove objectives, edit the "objectives" array in data.json.
+   ============================================================ */
+#objectives {
+  padding: var(--section-padding);
+  background: var(--color-midnight-soft);
+}
+
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+}
+
+/* Individual objective card */
+.objective-card {
+  background: var(--color-midnight-mid);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--border-radius-lg);
+  padding: 36px 30px;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold glow on the left edge on hover */
+.objective-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-gold-bright));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+
+.objective-card:hover {
+  border-color: var(--color-border);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.objective-card:hover::before {
+  transform: scaleY(1);
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 14px;
+}
+
+.card-description {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* Loading state while cards are being fetched */
+.loading-text {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 60px;
+  font-style: italic;
+}
+
+
+/* ============================================================
+   8. TRUST & TRANSPARENCY SECTION
+   Two dedicated focus areas: Girl Child & Substance Recovery
+   ============================================================ */
+#trust {
+  padding: var(--section-padding);
+  background: var(--color-midnight);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.trust-card {
+  background: var(--color-midnight-mid);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.trust-card:hover {
+  box-shadow: var(--shadow-gold);
+}
+
+/* Decorative number watermark */
+.trust-card-number {
+  position: absolute;
+  top: -10px;
+  right: 24px;
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--color-gold-pale);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.trust-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--color-gold-pale);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.trust-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+}
+
+.trust-card-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+}
+
+.trust-commitment {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.trust-commitment p {
+  font-size: 0.85rem;
+  color: var(--color-gold-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.trust-commitment ul li {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.trust-commitment ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+}
+
+
+/* ============================================================
+   9. TEAM / LEADERSHIP SECTION
+   Circular profile photos for board members.
+   Team data is loaded from data.json via JavaScript.
+   To add a team member, add their photo to /images/ and
+   add an entry to the "team" array in data.json.
+   ============================================================ */
+#team {
+  padding: var(--section-padding);
+  background: var(--color-midnight-soft);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 60px;
+}
+
+/* The featured founder card spans full width */
+.team-card.featured {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  background: var(--color-midnight-mid);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: 48px;
+  margin-bottom: 8px;
+}
+
+.team-card {
+  background: var(--color-midnight-mid);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--border-radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.team-card:hover {
+  border-color: var(--color-border);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+/* Circular team photo */
+.team-photo-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-gold);
+  margin: 0 auto 20px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 6px rgba(201, 168, 76, 0.1);
+}
+
+.team-card.featured .team-photo-wrapper {
+  width: 160px;
+  height: 160px;
+  margin: 0;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.team-info {
+  text-align: center;
+}
+
+.team-card.featured .team-info {
+  text-align: left;
+}
+
+.team-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 6px;
+}
+
+.team-card.featured .team-name {
+  font-size: 1.7rem;
+}
+
+.team-role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 14px;
+}
+
+.team-bio {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.team-card.featured .team-bio {
+  font-size: 0.95rem;
+  max-width: 520px;
+}
+
+/* Founder badge */
+.founder-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-gold-muted), var(--color-gold));
+  color: var(--color-text-on-gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   10. DONATION SECTION — SUPPORT OUR CAUSE
+   The Paystack button link is loaded from data.json.
+   To change your payment link, update "paystackUrl" in data.json.
+   ============================================================ */
+#donate {
+  padding: var(--section-padding);
+  background: linear-gradient(135deg, var(--color-midnight-mid), var(--color-midnight));
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Decorative gold glow circles */
+#donate::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.donate-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.donate-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--color-text-primary);
+}
+
+.donate-description {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 44px;
+}
+
+/* Donation amounts row */
+.donate-amounts {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.amount-pill {
+  background: var(--color-midnight-mid);
+  border: 1px solid var(--color-border);
+  color: var(--color-gold);
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: default;
+}
+
+.donate-note {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.donate-note a {
+  color: var(--color-gold);
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   11. CONTACT & FORM SECTION
+   The form action is a placeholder — integrate with your
+   backend or a service like Formspree to enable real emails.
+   The physical address is loaded from data.json.
+   ============================================================ */
+#contact {
+  padding: var(--section-padding);
+  background: var(--color-midnight-soft);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact-info-text {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.contact-detail-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--color-gold-pale);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-detail-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 4px;
+}
+
+.contact-detail-value {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* ----------------------------------------
+   Contact Form
+   ---------------------------------------- */
+.contact-form {
+  background: var(--color-midnight-mid);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--border-radius-lg);
+  padding: 48px 40px;
+}
+
+.form-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: var(--color-text-primary);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+/* Form input / textarea styles */
+.form-input,
+.form-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--border-radius);
+  padding: 14px 16px;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold);
+  background: rgba(201, 168, 76, 0.04);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-bright));
+  color: var(--color-text-on-gold);
+  padding: 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-top: 8px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
+}
+
+
+/* ============================================================
+   12. FOOTER
+   To update social links, edit "socialMedia" in data.json.
+   To update address, edit "address" in data.json.
+   ============================================================ */
+#footer {
+  background: #080812;
+  padding: 64px 0 32px;
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.footer-brand-name {
+  font-family: var(--font-accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-gold-bright);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.footer-brand-tagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.footer-brand-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 320px;
+}
+
+.footer-col-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+  padding-left: 4px;
+}
+
+/* Social Media Icons */
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.social-link:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-text-on-gold);
+  transform: translateY(-3px);
+}
+
+/* Copyright bar at the very bottom */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.footer-copyright span {
+  color: var(--color-gold);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal a {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.footer-legal a:hover {
+  color: var(--color-gold);
+}
+
+
+/* ============================================================
+   MENTAL HEALTH VIDEO BLOCK
+   Inside the Trust & Transparency section.
+   Sits below the two trust cards.
+   ============================================================ */
+.mental-health-video-block {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.mh-video-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 14px;
+}
+
+.mh-video-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+}
+
+/* ----------------------------------------
+   YouTube "Watch on YouTube" Button
+   Red matches YouTube's brand colour.
+   To change the button colour update --yt-red below.
+   ---------------------------------------- */
+.btn-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ff0000;          /* YouTube red */
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 28px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+}
+
+.btn-youtube:hover {
+  background: #cc0000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 0, 0, 0.45);
+}
+
+/* YouTube SVG icon inside the button */
+.yt-icon {
+  width: 24px;
+  height: 18px;
+  fill: #ffffff;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------
+   Video embed — responsive 16:9 ratio wrapper
+   The iframe fills this wrapper and stays 16:9
+   no matter what screen size.
+   ---------------------------------------- */
+.mh-video-player {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.video-embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-midnight-mid);
+}
+
+.video-embed-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Fallback placeholder shown when no URL is set yet */
+.video-embed-wrapper::before {
+  content: '▶  Video placeholder — paste your YouTube embed URL in the src attribute';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 20px;
+  z-index: 0;
+}
+
+.video-caption {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .mental-health-video-block {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* ============================================================
+   GALLERY SECTION — NGO Work Showcase
+   ============================================================ */
+#gallery {
+  padding: var(--section-padding);
+  background: var(--color-midnight);
+}
+
+/* ----------------------------------------
+   Gallery Grid
+   Displays items in a 3-column masonry-like grid.
+   Switches to 2 columns on tablet, 1 on mobile.
+   ---------------------------------------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+/* Each gallery item = photo + caption */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* Wrapper provides the hover overlay effect */
+.gallery-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border-soft);
+  aspect-ratio: 4 / 3;   /* Fixed ratio keeps grid uniform */
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* Scale image up on hover */
+.gallery-item:hover .gallery-img {
+  transform: scale(1.06);
+}
+
+/* Dark gold overlay that slides up on hover */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 26, 0.88) 0%,
+    rgba(201, 168, 76, 0.15) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Category label shown on hover */
+.gallery-overlay-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* Caption text below each photo or video */
+.gallery-caption {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding: 0 2px;
+}
+
+/* ---- VIDEO ITEMS in the gallery ---- */
+.gallery-video-wrapper {
+  /* Remove the fixed 260px height so video can size itself */
+  height: auto !important;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gallery-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: #000;
+}
+
+/* Small badge shown at the bottom of a video card (not full-overlay) */
+.gallery-video-badge {
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 12px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, transparent 60%);
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   DONATE BUTTON — Enlarged version in the donate section
+   ============================================================ */
+.btn-donate-large {
+  font-size: 1rem;
+  padding: 18px 52px;
+  letter-spacing: 0.1em;
+}
+
+
+/* ============================================================
+   13. ANIMATIONS & UTILITIES
+   ============================================================ */
+
+/* Fade-in-up animation for elements as they scroll into view */
+/* JS adds .visible class via IntersectionObserver */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay for grid items */
+.fade-up:nth-child(1) { transition-delay: 0.05s; }
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.15s; }
+.fade-up:nth-child(4) { transition-delay: 0.2s; }
+.fade-up:nth-child(5) { transition-delay: 0.25s; }
+.fade-up:nth-child(6) { transition-delay: 0.3s; }
+
+/* Gold divider line */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  margin: 60px 0;
+  opacity: 0.3;
+}
+
+/* Highlight text in gold */
+.text-gold {
+  color: var(--color-gold);
+}
+
+
+/* ============================================================
+   14. MOBILE RESPONSIVENESS — MEDIA QUERIES
+   The site is mobile-first. Styles above are for desktop,
+   and these overrides adapt the layout for smaller screens.
+   ============================================================ */
+
+/* --- Tablet: max-width 1024px --- */
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-image {
+    height: 360px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-card.featured {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-card.featured .team-photo-wrapper {
+    margin: 0 auto 20px;
+  }
+
+  .team-card.featured .team-info {
+    text-align: center;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* --- Mobile: max-width 768px --- */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 64px 0;
+    --container-padding: 0 20px;
+  }
+
+  /* Show hamburger menu, hide desktop links */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--color-midnight-soft);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  /* When mobile menu is open, JS adds .open class */
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary, .btn-outline {
+    text-align: center;
+    width: 100%;
+    padding: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(1)::after,
+  .stat-item:nth-child(3)::after {
+    display: none;
+  }
+
+  .objectives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 32px 24px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-legal {
+    justify-content: center;
+  }
+}
+
+/* --- Small mobile: max-width 480px --- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .donate-amounts {
+    flex-direction: column;
+    align-items: center;
+  }
+}
