@@ -139,7 +139,7 @@ function initSite() {
             />
           </div>
           <div class="team-info">
-            <span class="founder-badge">Founder</span>
+            <span class="founder-badge">Executive Director</span>
             <h3 class="team-name">${member.name}</h3>
             <p class="team-role">${member.role}</p>
             <p class="team-bio">${member.bio}</p>
