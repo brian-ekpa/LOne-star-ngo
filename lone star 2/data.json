@@ -1,0 +1,114 @@
+{
+  "organization": {
+    "name": "Lone Star Hope Initiative",
+    "abbreviation": "LSHI",
+    "tagline": "Hope to the Street Child",
+    "description": "Lone Star Hope Initiative (LSHI) is a non-profit organization established to promote the protection, rehabilitation, education, and psychosocial wellbeing of vulnerable street children and adolescents, with particular emphasis on the girl child and youth affected by substance use.",
+    "address": {
+      "line1": "12 Hope Avenue, Garki District",
+      "line2": "Abuja, Federal Capital Territory",
+      "country": "Nigeria"
+    },
+    "phone": "+234 800 000 0000",
+    "email": "info@lonestarhopeinitiative.org",
+    "paystackUrl": "https://paystack.shop/pay/fm9fxk8jez",
+    "socialMedia": {
+      "facebook": "https://facebook.com/lonestarhopeinitiative",
+      "twitter": "https://twitter.com/LSHInitiative",
+      "instagram": "https://instagram.com/lonestarhopeinitiative",
+      "linkedin": "https://linkedin.com/company/lone-star-hope-initiative"
+    }
+  },
+  "objectives": [
+    {
+      "id": 1,
+      "icon": "🏥",
+      "title": "Psychological Rehabilitation",
+      "description": "Provide psychological rehabilitation and basic healthcare services for abused street children and adolescents, especially the girl child.",
+      "color": "gold"
+    },
+    {
+      "id": 2,
+      "icon": "💊",
+      "title": "Substance Recovery",
+      "description": "Rehabilitate adolescents dependent on psychoactive substance use through professional counselling and structured recovery programs.",
+      "color": "gold"
+    },
+    {
+      "id": 3,
+      "icon": "🏠",
+      "title": "Family Reunion",
+      "description": "Reunite street children with their families where safe and appropriate, restoring bonds and providing follow-up support.",
+      "color": "gold"
+    },
+    {
+      "id": 4,
+      "icon": "🛠️",
+      "title": "Skills & Livelihood",
+      "description": "Provide enabling environments for skills acquisition and livelihood development, empowering street children toward self-sufficiency.",
+      "color": "gold"
+    },
+    {
+      "id": 5,
+      "icon": "📚",
+      "title": "Education Support",
+      "description": "Provide scholarships and support for basic education, ensuring every child has access to quality learning regardless of circumstance.",
+      "color": "gold"
+    },
+    {
+      "id": 6,
+      "icon": "🎓",
+      "title": "Awareness Programs",
+      "description": "Conduct extensive mental health and substance-use awareness programs in government primary and secondary schools across communities.",
+      "color": "gold"
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Dr Ugwu Nneka Valeria-Offiah",
+      "role": "Founder & Executive Director",
+      "image": "images/valeria-ugwu.jpg",
+      "bio": "Medical Doctor, Mental health Professional and Gospel music Minister with years of experience in mental health and public health awareness.",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Lady Uchenna Bassey",
+      "role": "Director of Programs",
+      "image": "images/member2.jpg",
+      "bio": "An Economist with years of experience in the humanitarian sector.",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "name": "Dr David Iberedem Clinton",
+      "role": "Head of Medical Services",
+      "image": "images/member3.jpg",
+      "bio": "A medical Doctor and Specialist Psychiatrist with years of experience in mental health and addiction psychiatry.",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "name": "Dr Justin Ikor Ekpa",
+      "role": "Board Trustee",
+      "image": "images/member4.jpg",
+      "bio": "Dr Justin Ikor Ekpa A medical Doctor and Information Technology expert with years of working experience in the Humanitarian secto.",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Lady Nkechi Biddy Offiah",
+      "role": "Community Outreach Lead",
+      "image": "images/member5.jpg",
+      "bio": "A retired educationist , Guidance counsellor and civil servant with the Federal Ministry of Education in Nigeria, with several years of working experience with the humanitarian sector.",
+      "featured": false
+    }
+  ],
+  "stats": [
+    { "value": "500+", "label": "Children Reached" },
+    { "value": "12", "label": "Active Programs" },
+    { "value": "8", "label": "Partner States" },
+    { "value": "95%", "label": "Reunification Rate" }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "_instructions": {
+    "how_to_add_image": "Copy an image block, paste it into 'items', update src, alt, category, and caption.",
+    "how_to_add_video": "Copy a video block, paste it into 'items', update src, title, category, and caption.",
+    "image_folder": "Put photos in /public/images/gallery/ then reference as /images/gallery/your-photo.jpg",
+    "video_folder": "Put videos in /public/videos/ then reference as /videos/your-video.mp4",
+    "how_to_remove": "Delete the { } block for the item you want to remove.",
+    "how_to_reorder": "Cut and paste blocks in the order you want them to appear."
+  },
+
+  "sectionTitle": "Moments of Impact",
+  "sectionLabel": "Our Work in Action",
+  "sectionSubtitle": "A glimpse into our programs, outreach activities, and the lives we are touching across Nigeria. Every image and video tells a story of resilience, hope, and transformation.",
+
+  "items": [
+    {
+      "id": 1,
+      "type": "image",
+      "src": "images/gallery/outreach-group-1.jpeg",
+      "alt": "Large group of students and LSHI team during school outreach",
+      "category": "School Outreach",
+      "caption": "Students and LSHI team at a recent school outreach program"
+    },
+    {
+      "id": 2,
+      "type": "image",
+      "src": "images/gallery/outreach-speaker.jpeg",
+      "alt": "LSHI founder addressing students with a microphone during outreach",
+      "category": "School Outreach",
+      "caption": "Founder engaging with students during a sensitisation session"
+    },
+    {
+      "id": 3,
+      "type": "video",
+      "src": "videos/outreach-video.mp4",
+      "poster": "",
+      "title": "Recent School Outreach",
+      "category": "Outreach Video",
+      "caption": "Highlights from LSHI's recent school outreach program"
+    },
+    {
+      "id": 4,
+      "type": "image",
+      "src": "images/gallery/outreach-crowd.jpeg",
+      "alt": "LSHI founder speaking to a large crowd of students",
+      "category": "School Outreach",
+      "caption": "Reaching hundreds of students with our awareness message"
+    },
+    {
+      "id": 5,
+      "type": "image",
+      "src": "images/gallery/outreach-engagement.jpeg",
+      "alt": "LSHI founder distributing materials and engaging with students",
+      "category": "School Outreach",
+      "caption": "Distributing educational materials to students"
+    },
+    {
+      "id": 6,
+      "type": "image",
+      "src": "images/gallery/outreach-group-2.jpeg",
+      "alt": "Group photo of students and LSHI volunteers at outreach",
+      "category": "School Outreach",
+      "caption": "A memorable moment with students at the outreach"
+    },
+    {
+      "id": 7,
+      "type": "image",
+      "src": "images/gallery/outreach-team-1.jpeg",
+      "alt": "LSHI outreach team group photo at school premises",
+      "category": "Our Team",
+      "caption": "The LSHI outreach team ready to make an impact"
+    },
+    {
+      "id": 8,
+      "type": "image",
+      "src": "images/gallery/outreach-team-2.jpeg",
+      "alt": "Core LSHI team members standing together before the outreach",
+      "category": "Our Team",
+      "caption": "LSHI team members at the outreach venue"
+    },
+    {
+      "id": 9,
+      "type": "image",
+      "src": "images/gallery/outreach-team-3.jpeg",
+      "alt": "LSHI full team assembled at school premises for outreach",
+      "category": "Our Team",
+      "caption": "The full LSHI team assembled for the school outreach"
+    },
+    {
+      "id": 10,
+      "type": "video",
+      "src": "videos/lshi-video1.mp4",
+      "poster": "",
+      "title": "LSHI in Action",
+      "category": "NGO Activities",
+      "caption": "LSHI team working with the community"
+    },
+    {
+      "id": 11,
+      "type": "video",
+      "src": "videos/lshi-video2.mp4",
+      "poster": "",
+      "title": "About LSHI",
+      "category": "NGO Story",
+      "caption": "Learn more about the Lone Star Hope Initiative"
+    }
+  ]
+}

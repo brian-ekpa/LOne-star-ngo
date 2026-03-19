@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lone Star Hope Initiative</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <!-- Google Fonts — must be first -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="lshi.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+       NAVIGATION — Sticky header with logo and Donate button
+       ============================================================ -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- Logo -->
+          <a
+            href="#hero"
+            class="nav-logo"
+            aria-label="Lone Star Hope Initiative home"
+          >
+            <img
+              src="images/lshi-logo-transparent.png"
+              alt="Lone Star Hope Initiative Logo"
+              class="nav-logo-img"
+            />
+          </a>
+
+          <!-- Hamburger Toggle (mobile only) -->
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Desktop Navigation Links -->
+          <ul class="nav-links" id="nav-links" role="list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#objectives">Our Work</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#team">Leadership</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- Donate button — scrolls to the Donate section -->
+            <li>
+              <a
+                class="btn-donate-nav"
+                href="#donate"
+                aria-label="Go to donation section"
+              >
+                Donate
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+       HERO SECTION — Full-screen mission statement banner
+       ============================================================ -->
+    <section id="hero" aria-labelledby="hero-title">
+      <!-- Background image layer -->
+      <div class="hero-background" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <!-- Small label above the title -->
+          <p class="hero-eyebrow">Est. 2026 &bull; Abuja, Nigeria</p>
+
+          <!-- Main mission headline -->
+          <h1 class="hero-title" id="hero-title">
+            <span class="highlight">Hope</span> to the<br />
+            Street Child
+          </h1>
+
+          <!-- Supporting description -->
+          <p class="hero-description">
+            Lone Star Hope Initiative is dedicated to the protection,
+            rehabilitation, and psychosocial wellbeing of vulnerable street
+            children and adolescents &mdash; with a special focus on the girl
+            child and youth affected by substance use.
+          </p>
+
+          <!-- Call-to-action buttons -->
+          <div class="hero-actions">
+            <!-- Scrolls smoothly to the Donate section — NOT directly to payment -->
+            <a
+              class="btn-primary"
+              href="#donate"
+              aria-label="Support our cause — go to donation section"
+            >
+              Support Our Cause
+            </a>
+            <a
+              class="btn-outline"
+              href="#about"
+              aria-label="Learn more about LSHI"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll down indicator -->
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       ABOUT / MISSION SECTION
+       ============================================================ -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left: Image with decorative gold corners -->
+          <div class="about-image-wrapper fade-up">
+            <img
+              class="about-image"
+              src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80"
+              alt="Children receiving support from LSHI"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Right: Text content -->
+          <div class="about-text fade-up">
+            <span class="section-label">Who We Are</span>
+            <h2 class="section-title" id="about-title">
+              A Beacon of Hope for Nigeria's Most Vulnerable
+            </h2>
+            <div class="gold-line"></div>
+            <p>
+              Lone Star Hope Initiative (LSHI) is a non-profit organization
+              established to promote the protection, rehabilitation, education,
+              and psychosocial wellbeing of vulnerable street children and
+              adolescents in Nigeria.
+            </p>
+            <p>
+              With particular emphasis on the girl child and youth affected by
+              substance use, we work tirelessly to restore dignity, opportunity,
+              and hope to those who need it most.
+            </p>
+            <p>
+              Our holistic approach addresses the root causes of street life
+              &mdash; including family breakdown, poverty, and substance
+              dependency &mdash; through evidence-based programs and
+              compassionate care.
+            </p>
+
+            <!-- Value tags -->
+            <div class="about-values">
+              <span class="value-tag">Dignity</span>
+              <span class="value-tag">Transparency</span>
+              <span class="value-tag">Compassion</span>
+              <span class="value-tag">Empowerment</span>
+              <span class="value-tag">Community</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       OBJECTIVES SECTION — 6 Dynamic Cards
+       Cards are fetched from data.json → "objectives" array
+       and rendered by JavaScript. Edit data.json to change content.
+       ============================================================ -->
+    <section id="objectives" aria-labelledby="objectives-title">
+      <div class="container">
+        <div class="text-center fade-up">
+          <span class="section-label">What We Do</span>
+          <h2 class="section-title" id="objectives-title">
+            Our Organizational Objectives
+          </h2>
+          <div class="gold-line centered"></div>
+          <p class="section-subtitle">
+            LSHI is established with six core objectives that guide every
+            program, initiative, and intervention we undertake for street
+            children and vulnerable youth.
+          </p>
+        </div>
+
+        <!-- This grid is populated by JavaScript from data.json -->
+        <div class="objectives-grid" id="objectives-grid" role="list">
+          <p class="loading-text">Loading objectives...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       TRUST & TRANSPARENCY SECTION
+       Two focus areas: Girl Child protection & Substance Recovery
+       ============================================================ -->
+    <section id="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="text-center fade-up">
+          <span class="section-label">Our Commitment</span>
+          <h2 class="section-title" id="trust-title">
+            Trust &amp; Transparency in Our Work
+          </h2>
+          <div class="gold-line centered"></div>
+          <p class="section-subtitle">
+            We are accountable to the children we serve, our donors, and our
+            communities. Every action is guided by evidence, ethics, and an
+            unwavering commitment to human dignity.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <!-- Card 1: Girl Child Focus -->
+          <div
+            class="trust-card fade-up"
+            aria-label="Girl Child Protection Focus"
+          >
+            <span class="trust-card-number" aria-hidden="true">01</span>
+            <div class="trust-icon" aria-hidden="true">👧</div>
+            <h3 class="trust-card-title">The Girl Child First</h3>
+            <p class="trust-card-text">
+              LSHI places the protection and empowerment of the girl child at
+              the heart of everything we do. Street-connected girls face
+              disproportionate risks of exploitation, abuse, and exclusion from
+              education.
+            </p>
+            <p class="trust-card-text" style="margin-top: 16px">
+              Our gender-responsive programs are designed to address these
+              specific vulnerabilities &mdash; providing safe spaces,
+              trauma-informed care, and pathways to sustainable futures for
+              girls who have been failed by systems meant to protect them.
+            </p>
+            <div class="trust-commitment">
+              <p>Our commitments to the girl child:</p>
+              <ul>
+                <li>Safe and gender-sensitive shelter and care</li>
+                <li>Psychological counselling and trauma support</li>
+                <li>Scholarship and education access programs</li>
+                <li>Vocational skills for economic independence</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card 2: Substance Recovery -->
+          <div
+            class="trust-card fade-up"
+            aria-label="Substance Recovery Programs"
+          >
+            <span class="trust-card-number" aria-hidden="true">02</span>
+            <div class="trust-icon" aria-hidden="true">💙</div>
+            <h3 class="trust-card-title">Substance Recovery</h3>
+            <p class="trust-card-text">
+              Substance dependency is one of the most critical challenges facing
+              street-connected youth in Nigeria today. LSHI operates structured,
+              evidence-based recovery programs that treat addiction not as a
+              moral failing, but as a health issue deserving compassionate
+              intervention.
+            </p>
+            <p class="trust-card-text" style="margin-top: 16px">
+              We partner with certified counsellors, medical professionals, and
+              community leaders to deliver care that addresses both the physical
+              and psychological dimensions of substance dependency.
+            </p>
+            <div class="trust-commitment">
+              <p>Our substance recovery pillars:</p>
+              <ul>
+                <li>Professional clinical assessment and support</li>
+                <li>Peer mentorship and group therapy sessions</li>
+                <li>School-based prevention and awareness programs</li>
+                <li>Post-recovery livelihood and reintegration support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+           MENTAL HEALTH VIDEO — Featured video from LSHI's YouTube channel
+           TO ADD YOUR VIDEO:
+             Replace the src URL in the <iframe> below.
+             Go to YouTube → your video → Share → Embed → copy the URL
+             from the src attribute and paste it here.
+           ============================================================ -->
+        <div class="mental-health-video-block fade-up">
+          <!-- Left side: intro text + YouTube button -->
+          <div class="mh-video-text">
+            <span class="section-label">Mental Health Awareness</span>
+            <h3 class="mh-video-title">
+              Join the Conversation on Mental Health
+            </h3>
+            <div class="gold-line"></div>
+            <p class="mh-video-desc">
+              Our founder Valeria Ugwu leads open, honest discussions on mental
+              health, emotional wellbeing, and the psychosocial challenges
+              facing street-connected youth in Nigeria. These conversations are
+              for families, educators, and communities who want to understand
+              and support vulnerable young people.
+            </p>
+            <p class="mh-video-desc" style="margin-top: 12px">
+              Subscribe to the channel for regular mental health content,
+              interviews, and educational resources &mdash; all free and
+              accessible.
+            </p>
+
+            <!--
+            YOUTUBE BUTTON
+            TO UPDATE: Replace the href below with your YouTube channel URL.
+            Example: href="https://www.youtube.com/@YourChannelName"
+          -->
+            <a
+              class="btn-youtube"
+              href="YOUR_YOUTUBE_CHANNEL_URL_HERE"
+              target="www.youtube.com/@ValeriaMentalHealthZone-w6h/videos"
+              rel="noopener noreferrer"
+              aria-label="Watch mental health videos on YouTube"
+            >
+              <svg class="yt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"
+                />
+                <polygon
+                  points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                  fill="white"
+                />
+              </svg>
+              Watch on YouTube
+            </a>
+          </div>
+
+          <!--
+          Right side: embedded video player
+          TO UPDATE THE VIDEO:
+            1. Go to the YouTube video you want to embed
+            2. Click Share → Embed
+            3. Copy ONLY the URL from the src="..." part
+            4. Paste it below replacing YOUR_VIDEO_EMBED_URL_HERE
+               Example: https://www.youtube.com/embed/dQw4w9WgXcQ
+        -->
+          <div class="mh-video-player">
+            <div class="video-embed-wrapper">
+              <iframe
+                src="YOUR_VIDEO_EMBED_URL_HERE"
+                title="LSHI Mental Health Discussion Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            <p class="video-caption">
+              Watch this discussion on mental health awareness by LSHI's founder
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       GALLERY SECTION
+       Populated automatically from gallery.json.
+       To add, remove, or change photos/videos:
+         1. Open public/gallery.json
+         2. Add or edit entries in the "items" array
+         3. Save the file — the page updates automatically
+       ============================================================ -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="text-center fade-up">
+          <span class="section-label">Our Work in Action</span>
+          <h2 class="section-title" id="gallery-title">Moments of Impact</h2>
+          <div class="gold-line centered"></div>
+          <p class="section-subtitle">
+            A glimpse into our programs, outreach activities, and the lives we
+            are touching across Nigeria. Every photo and video tells a story of
+            resilience, hope, and transformation.
+          </p>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+          <p class="loading-text">Loading gallery...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       LEADERSHIP TEAM SECTION
+       Team member cards are loaded from data.json → "team" array.
+       ============================================================ -->
+    <section id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="text-center fade-up">
+          <span class="section-label">Who Leads Us</span>
+          <h2 class="section-title" id="team-title">Our Leadership</h2>
+          <div class="gold-line centered"></div>
+          <p class="section-subtitle">
+            LSHI is led by a passionate team of professionals dedicated to
+            creating lasting change in the lives of Nigeria's most vulnerable
+            children.
+          </p>
+        </div>
+
+        <!-- JS populates this grid from data.json -->
+        <div class="team-grid" id="team-grid">
+          <p class="loading-text">Loading team...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       DONATION SECTION — Support Our Cause
+       The Paystack button link is loaded from data.json.
+       To change your payment link, update "paystackUrl" in data.json.
+       ============================================================ -->
+    <section id="donate" aria-labelledby="donate-title">
+      <div class="container">
+        <div class="donate-content">
+          <span class="section-label">Make a Difference</span>
+          <h2 class="donate-title" id="donate-title">Support Our Cause</h2>
+          <p class="donate-description">
+            Your generosity directly funds rehabilitation programs, educational
+            scholarships, healthcare services, and safe shelter for Nigeria's
+            most vulnerable street children. Every contribution &mdash; no
+            matter the size &mdash; changes a life.
+          </p>
+
+          <!-- Suggested donation amounts (visual only) -->
+          <div class="donate-amounts" aria-label="Suggested donation amounts">
+            <span class="amount-pill">&#8358;5,000</span>
+            <span class="amount-pill">&#8358;10,000</span>
+            <span class="amount-pill">&#8358;25,000</span>
+            <span class="amount-pill">&#8358;50,000</span>
+            <span class="amount-pill">Custom</span>
+          </div>
+
+          <!-- Main donate button — link set by JavaScript from data.json -->
+          <a
+            class="btn-primary btn-donate-large"
+            href="#"
+            data-donate-link="true"
+            aria-label="Click to donate to LSHI"
+          >
+            ❤️ &nbsp; Donate Now
+          </a>
+
+          <p class="donate-note">
+            Your donation is processed securely online. LSHI is a registered
+            non-profit organisation in Nigeria. For bank transfer enquiries,
+            contact us at
+            <a href="mailto:info@lonestarhopeinitiative.org">
+              info@lonestarhopeinitiative.org
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       CONTACT SECTION
+       Address is populated from data.json → "organization.address"
+       ============================================================ -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left: Contact info -->
+          <div class="fade-up">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="contact-info-title" id="contact-title">
+              Reach Out to Us
+            </h2>
+            <div class="gold-line"></div>
+            <p class="contact-info-text">
+              Whether you want to partner with us, volunteer, inquire about our
+              programs, or simply learn more about our work, we'd love to hear
+              from you.
+            </p>
+
+            <!-- Physical Address -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">📍</div>
+              <div>
+                <p class="contact-detail-label">Physical Address</p>
+                <p class="contact-detail-value" id="org-address">Loading...</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">📞</div>
+              <div>
+                <p class="contact-detail-label">Phone</p>
+                <p class="contact-detail-value" id="org-phone">Loading...</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">✉️</div>
+              <div>
+                <p class="contact-detail-label">Email</p>
+                <p class="contact-detail-value" id="org-email">Loading...</p>
+              </div>
+            </div>
+
+            <!-- Social Media Links (populated by JS) -->
+            <div class="social-links" aria-label="Social media links"></div>
+          </div>
+
+          <!-- Right: Contact form -->
+          <div class="fade-up">
+            <form
+              class="contact-form"
+              id="contact-form"
+              aria-label="Contact form"
+              novalidate
+            >
+              <h3 class="form-title">Send Us a Message</h3>
+
+              <!-- Name + Email row -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="field-name">
+                    Full Name <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="field-name"
+                    name="name"
+                    placeholder="Your full name"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="field-email">
+                    Email Address <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="field-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <!-- Subject -->
+              <div class="form-group">
+                <label class="form-label" for="field-subject">Subject</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="field-subject"
+                  name="subject"
+                  placeholder="How can we help?"
+                />
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label class="form-label" for="field-message">
+                  Message <span aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  class="form-textarea"
+                  id="field-message"
+                  name="message"
+                  placeholder="Tell us about your enquiry..."
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+       FOOTER
+       Social links and address are populated from data.json.
+       ============================================================ -->
+    <footer id="footer" role="contentinfo">
+      <div class="container">
+        <!-- Top footer: Brand + Quick Links + Address -->
+        <div class="footer-top">
+          <!-- Brand column -->
+          <div>
+            <p class="footer-brand-name">Lone Star Hope Initiative</p>
+            <p class="footer-brand-tagline">Hope to the Street Child</p>
+            <p class="footer-brand-desc">
+              A non-profit organisation dedicated to the protection,
+              rehabilitation, and psychosocial wellbeing of vulnerable street
+              children and adolescents in Nigeria.
+            </p>
+            <!-- Social links (populated by JS) -->
+            <div
+              class="social-links"
+              aria-label="Footer social media links"
+            ></div>
+          </div>
+
+          <!-- Quick Links column -->
+          <div>
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links" role="list">
+              <li><a href="#about">About LSHI</a></li>
+              <li><a href="#objectives">Our Objectives</a></li>
+              <li><a href="#trust">Our Commitment</a></li>
+              <li><a href="#team">Leadership</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#donate">Donate</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Address column -->
+          <div>
+            <h4 class="footer-col-title">Our Location</h4>
+            <p
+              class="footer-links"
+              id="footer-address"
+              style="
+                color: var(--color-text-muted);
+                font-size: 0.88rem;
+                line-height: 1.8;
+              "
+            >
+              Loading...
+            </p>
+            <div style="margin-top: 20px">
+              <h4 class="footer-col-title">Contact</h4>
+              <ul class="footer-links" role="list">
+                <li>
+                  <a href="mailto:info@lonestarhopeinitiative.org"
+                    >info@lonestarhopeinitiative.org</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom footer: Copyright + Legal -->
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; <span>2026</span> Lone Star Hope Initiative (LSHI). All
+            rights reserved. Registered Non-Profit, Nigeria.
+          </p>
+          <nav class="footer-legal" aria-label="Legal links">
+            <a href="#about">Privacy Policy</a>
+            <a href="#about">Terms of Use</a>
+            <a href="#about">Annual Report</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Main JavaScript — all interactivity -->
+    <script src="lshi.js"></script>
+  </body>
+</html>
