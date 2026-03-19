@@ -5,12 +5,12 @@
     "tagline": "Hope to the Street Child",
     "description": "Lone Star Hope Initiative (LSHI) is a non-profit organization established to promote the protection, rehabilitation, education, and psychosocial wellbeing of vulnerable street children and adolescents, with particular emphasis on the girl child and youth affected by substance use.",
     "address": {
-      "line1": "12 Hope Avenue, Garki District",
-      "line2": "Abuja, Federal Capital Territory",
+      "line1": " No. 7 Oscar’s Place, New Victory Close, off Obirikwere Bridge by East-West Road",
+      "line2": "Port Harcourt, Rivers State, Nigeria",
       "country": "Nigeria"
     },
-    "phone": "+234 800 000 0000",
-    "email": "info@lonestarhopeinitiative.org",
+    "phone": "+234 806 016 4073",
+    "email": "lonestarhopeinitiative@gmail.com",
     "paystackUrl": "https://paystack.shop/pay/fm9fxk8jez",
     "socialMedia": {
       "facebook": "https://facebook.com/lonestarhopeinitiative",
@@ -30,7 +30,7 @@
     {
       "id": 2,
       "icon": "💊",
-      "title": "Substance Recovery",
+      "title": "Drug Rehabilitation. ",
       "description": "Rehabilitate adolescents dependent on psychoactive substance use through professional counselling and structured recovery programs.",
       "color": "gold"
     },
@@ -67,7 +67,7 @@
     {
       "id": 1,
       "name": "Dr Ugwu Nneka Valeria-Offiah",
-      "role": "Founder & Executive Director",
+      "role": " Executive Director",
       "image": "images/valeria-ugwu.jpg",
       "bio": "Medical Doctor, Mental health Professional and Gospel music Minister with years of experience in mental health and public health awareness.",
       "featured": true
@@ -91,9 +91,9 @@
     {
       "id": 4,
       "name": "Dr Justin Ikor Ekpa",
-      "role": "Board Trustee",
+      "role": "Trustee",
       "image": "images/member4.jpg",
-      "bio": "Dr Justin Ikor Ekpa A medical Doctor and Information Technology expert with years of working experience in the Humanitarian secto.",
+      "bio": "Dr Justin Ikor Ekpa A medical Doctor and Information Technology expert with years of working experience in the Humanitarian sector.",
       "featured": false
     },
     {
