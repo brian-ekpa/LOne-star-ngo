@@ -1,0 +1,252 @@
+{
+  "_instructions": {
+    "how_to_add_image": "Copy an image block, paste it into 'items', update src, alt, category, and caption.",
+    "how_to_add_video": "Copy a video block, paste it into 'items', update src, title, category, and caption.",
+    "image_folder": "Put photos in /public/images/gallery/ then reference as /images/gallery/your-photo.jpg",
+    "video_folder": "Put videos in /public/videos/ then reference as /videos/your-video.mp4",
+    "how_to_remove": "Delete the { } block for the item you want to remove.",
+    "how_to_reorder": "Cut and paste blocks in the order you want them to appear."
+  },
+
+  "sectionTitle": "Moments of Impact",
+  "sectionLabel": "Our Work in Action",
+  "sectionSubtitle": "From LSHI’s Substance Abuse Campaign at Community Secondary School, Okorodonu, to the World Mental Health Day Symposium and “Lived Experiences” media campaign. The campaign brought together LSHI, the Psychiatry Department of UPTH, Elpida, and other mental health stakeholders.",
+
+  "items": [
+    {
+      "id": 1,
+      "type": "image",
+      "src": "images/gallery/outreach-group-1.jpeg",
+      "alt": "Large group of students and LSHI team during school outreach",
+      "category": "School Outreach",
+      "caption": "Students and LSHI team at a recent school outreach program"
+    },
+    {
+      "id": 2,
+      "type": "image",
+      "src": "images/gallery/outreach-speaker.jpeg",
+      "alt": "LSHI founder addressing students with a microphone during outreach",
+      "category": "School Outreach",
+      "caption": "Executive director engaging with students during a sensitisation session"
+    },
+    {
+      "id": 3,
+      "type": "video",
+      "src": "videos/outreach-video.mp4",
+      "poster": "",
+      "title": "Recent School Outreach",
+      "category": "Outreach Video",
+      "caption": "Highlights from LSHI's recent school outreach program"
+    },
+    {
+      "id": 4,
+      "type": "image",
+      "src": "images/gallery/outreach-crowd.jpeg",
+      "alt": "LSHI founder speaking to a large crowd of students",
+      "category": "School Outreach",
+      "caption": "Reaching hundreds of students with our awareness message"
+    },
+    {
+      "id": 5,
+      "type": "image",
+      "src": "images/gallery/outreach-engagement.jpeg",
+      "alt": "LSHI founder distributing materials and engaging with students",
+      "category": "School Outreach",
+      "caption": "Distributing educational materials to students"
+    },
+    {
+      "id": 6,
+      "type": "image",
+      "src": "images/gallery/outreach-group-2.jpeg",
+      "alt": "Group photo of students and LSHI volunteers at outreach",
+      "category": "School Outreach",
+      "caption": "A memorable moment with students at the outreach"
+    },
+    {
+      "id": 7,
+      "type": "image",
+      "src": "images/gallery/outreach-team-1.jpeg",
+      "alt": "LSHI outreach team group photo at school premises",
+      "category": "Our Team",
+      "caption": "The LSHI outreach team ready to make an impact"
+    },
+    {
+      "id": 8,
+      "type": "image",
+      "src": "images/gallery/outreach-team-2.jpeg",
+      "alt": "Core LSHI team members standing together before the outreach",
+      "category": "Our Team",
+      "caption": "LSHI team members at the outreach venue"
+    },
+    {
+      "id": 9,
+      "type": "image",
+      "src": "images/gallery/outreach-team-3.jpeg",
+      "alt": "LSHI full team assembled at school premises for outreach",
+      "category": "Our Team",
+      "caption": " LSHI team and school administration assembled for the school outreach"
+    },
+    {
+      "id": 10,
+      "type": "video",
+      "src": "videos/lshi-video1.mp4",
+      "poster": "",
+      "title": "LSHI in Action",
+      "category": "NGO Activities",
+      "caption": "LSHI team working with the community"
+    },
+    {
+      "id": 11,
+      "type": "video",
+      "src": "videos/lshi-video2.mp4",
+      "poster": "",
+      "title": "About LSHI",
+      "category": "NGO Story",
+      "caption": "Learn more about the Lone Star Hope Initiative"
+    },
+    {
+      "id": 12,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0020.jpg",
+      "alt": "LSHI team member speaking to students during a school outreach",
+      "category": "Substance Abuse Campaign",
+      "caption": "Lone Star Hope Initiative’s Substance Abuse Campaign at Community Secondary School, Okorodonu"
+    },
+    {
+      "id": 13,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0022.jpg",
+      "alt": "LSHI volunteers gathered with participants at an outreach event",
+      "category": "Substance Abuse Campaign",
+      "caption": "Students and LSHI volunteers at Community Secondary School, Okorodonu"
+    },
+    {
+      "id": 14,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0023.jpg",
+      "alt": "LSHI team and students gathered together during school outreach",
+      "category": "Substance Abuse Campaign",
+      "caption": "LSHI’s Substance Abuse Campaign with students in Okorodonu"
+    },
+    {
+      "id": 15,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0024.jpg",
+      "alt": "LSHI team members standing together at an outreach venue",
+      "category": "Community Outreach",
+      "caption": "The LSHI team at the outreach venue"
+    },
+    {
+      "id": 16,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0025.jpg",
+      "alt": "LSHI outreach team gathered outside a community venue",
+      "category": "Community Outreach",
+      "caption": "LSHI volunteers together before the program"
+    },
+    {
+      "id": 17,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0026.jpg",
+      "alt": "LSHI volunteers posing together outside the outreach venue",
+      "category": "Community Outreach",
+      "caption": "Team members at the community outreach"
+    },
+    {
+      "id": 18,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0027.jpg",
+      "alt": "LSHI team members gathered for a group photo at an awareness event",
+      "category": "World Mental Health Day Symposium",
+      "caption": "LSHI team members at the World Mental Health Day Symposium"
+    },
+    {
+      "id": 19,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0028.jpg",
+      "alt": "LSHI team members standing with a guest during an awareness program",
+      "category": "World Mental Health Day Symposium",
+      "caption": "LSHI team and guests at the World Mental Health Day Symposium"
+    },
+    {
+      "id": 20,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0029.jpg",
+      "alt": "LSHI volunteers at a mental health awareness gathering",
+      "category": "World Mental Health Day Symposium",
+      "caption": "LSHI representatives at the Psychiatry Department of UPTH during the symposium"
+    },
+    {
+      "id": 21,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0030.jpg",
+      "alt": "LSHI speaker addressing an audience at an awareness event",
+      "category": "World Mental Health Day Symposium",
+      "caption": "A speaker presenting during the World Mental Health Day Symposium"
+    },
+    {
+      "id": 22,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0031.jpg",
+      "alt": "LSHI team members beside a mental health awareness display",
+      "category": "World Mental Health Day Symposium",
+      "caption": "The LSHI team at the World Mental Health Day Symposium"
+    },
+    {
+      "id": 23,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0032.jpg",
+      "alt": "LSHI volunteers gathered together during an awareness program",
+      "category": "World Mental Health Day Symposium",
+      "caption": "LSHI volunteers and mental health stakeholders at the symposium"
+    },
+    {
+      "id": 24,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0033.jpg",
+      "alt": "LSHI representatives speaking on air at Radio Uniport",
+      "category": "“Lived Experiences” Media Campaign",
+      "caption": "LSHI representatives discuss lived experiences during the World Mental Health Day media campaign"
+    },
+    {
+      "id": 25,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0034.jpg",
+      "alt": "LSHI team members standing with a guest at an event",
+      "category": "World Mental Health Day Symposium",
+      "caption": "LSHI team members and a guest at the World Mental Health Day Symposium"
+    },
+    {
+      "id": 26,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0035.jpg",
+      "alt": "LSHI team at the Radio Uniport studio",
+      "category": "“Lived Experiences” Media Campaign",
+      "caption": "LSHI and fellow mental health stakeholders during the “Lived Experiences” media campaign"
+    },
+    {
+      "id": 27,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0036.jpg",
+      "alt": "LSHI team members posing at the Radio Uniport studio",
+      "category": "“Lived Experiences” Media Campaign",
+      "caption": "LSHI representatives at Radio Uniport for the World Mental Health Day media campaign"
+    },
+    {
+      "id": 28,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0037.jpg",
+      "alt": "Speaker presenting mental health information at an event",
+      "category": "World Mental Health Day Symposium",
+      "caption": "A speaker shares a mental health presentation at the World Mental Health Day Symposium"
+    },
+    {
+      "id": 29,
+      "type": "image",
+      "src": "images/gallery/IMG-20261023-WA0038.jpg",
+      "alt": "LSHI representatives in the Radio Uniport studio",
+      "category": "“Lived Experiences” Media Campaign",
+      "caption": "LSHI representatives share lived experiences on air with Radio Uniport"
+    }
+  ]
+}
